@@ -22,7 +22,7 @@ function App() {
         // Display a dummy notification
         const notification = new Notification('Dummy Notification', {
           body: 'This is a dummy notification for testing purposes.',
-          icon: 'path/to/your/icon.png', // Replace with the path to your notification icon
+          icon: '../public/favicon.ico', // Replace with the path to your notification icon
         });
 
         notification.onclick = () => {
