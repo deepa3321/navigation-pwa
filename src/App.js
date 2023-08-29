@@ -17,6 +17,19 @@ function App() {
     try {
       await askForNotificationPermission();
       setNotificationStatus('Notifications enabled');
+
+      if (Notification.permission === 'granted') {
+        // Display a dummy notification
+        const notification = new Notification('Dummy Notification', {
+          body: 'This is a dummy notification for testing purposes.',
+          icon: 'path/to/your/icon.png', // Replace with the path to your notification icon
+        });
+
+        notification.onclick = () => {
+          console.log('Notification clicked');
+          notification.close();
+        };
+      }
     } catch (error) {
       console.error('Error subscribing:', error);
       setNotificationStatus('Failed to enable notifications');
